@@ -26,3 +26,7 @@ input{
 .alert{
     color: red;
 }
+
+.galert{
+    color: green;
+}
