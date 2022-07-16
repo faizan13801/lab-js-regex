@@ -1,8 +1,8 @@
-   
+
 div {  
     box-sizing: border-box; 
     width: 100%; 
-    border: 100px solid black; 
+    border: 100px solid rgb(255, 255, 255); 
 } 
    
 form {                                         
@@ -13,15 +13,14 @@ form {
     background-color: aliceblue;
 }
 
-form>p{
+form p{
     display: flex;
     flex-direction: row;
     justify-content: center;
-
 }
 input{
-    width: 300px;
-    margin-left: 2%;
+    width: auto;
+    margin-left: 5%;
     float: inline-end;
 }
 .alert{
