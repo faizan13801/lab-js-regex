@@ -11,21 +11,24 @@ function formValidate(){
     let p2 = /[a-zA-Z0-9 ,-]+/;
     // let p3 = /([\w])[@]+[.]+]/;
     let p3 =/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    let p4 = /[A-Z]+[a-z]+[0-9]+/;
-    let p5 = /[A-Z]+[a-z]+[0-9]+/;
+    let p41 = /[A-Z]+/;
+    let p42 = /[a-z]+/;
+    let p43 = /[0-9]+/;
+    // let p5 = /[A-Z]+[a-z]+[0-9]+/;
     let p6 =  /^[0-9]{10}$/;
 
 
     console.log(p1.test(name))
     console.log(p2.test(add))
     console.log(p3.test(email))
-    console.log(p4.test(pass))
-    console.log(p5.test(pass))
+    console.log(p41.test(pass))
+    console.log(p42.test(pass))
+    console.log(p43.test(pass))
+    // console.log(p4.test(pass))
+    // console.log(p5.test(pass))
     console.log(p6.test(number))
 
     if(name=="" || add=="" || email=="" || number=="" || pass=="" || cpass==""){
-
-
         if(name==""){
             document.getElementById("l1").innerHTML = "Kindly fill name field"
         }
@@ -77,7 +80,7 @@ function formValidate(){
         document.getElementById("l5").innerHTML = " "
         document.getElementById("l6").innerHTML = " "
         document.getElementById("l7").innerHTML = " "
-        if(p1.test(name) && p2.test(add) && p3.test(email) && p4.test(pass) && cpass==pass && p6.test(number)){
+        if(p1.test(name) && p2.test(add) && p3.test(email) && p41.test(pass) && p42.test(pass) && p43.test(pass) && cpass==pass && p6.test(number)){
             document.getElementById("l7").innerHTML = "Regex Validation Successful"
         }
         else{
@@ -91,10 +94,10 @@ function formValidate(){
             if(!p3.test(email)){
                 document.getElementById("l3").innerHTML = "Enter a valid Email"
             }
-            if(!p4.test(pass)){
-                document.getElementById("l4").innerHTML = "Password must contain atleast 1 uppercase, 1 lowercase, 1 number"
+            if(!p41.test(pass) || !p42.test(pass) || !p43.test(pass)){
+                document.getElementById("l4").innerText = "Password must contain 1 uppercase letter, 1 lowercase letter, atleast 1 number."
             }
-            if(!p5.test(cpass)){
+            if(!p41.test(cpass) || !p42.test(cpass) || !p43.test(cpass)){
                 document.getElementById("l5").innerHTML = "Confirm password must contain atleast 1 uppercase, 1 lowercase, 1 number"
             }
             else if(pass!=cpass){
